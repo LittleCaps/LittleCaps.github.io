@@ -1,9 +1,9 @@
 ---
 layout: article
-title: Page - Article Header Overlay Background Image (Customized Header Background)
+title: Page - Article Header Overlay Background Image (Immersive + Translucent Header)
+mode: immersive
 header:
   theme: dark
-  background: 'linear-gradient(135deg, rgb(34, 139, 87), rgb(139, 34, 139))'
 article_header:
   type: overlay
   theme: dark
