@@ -23,7 +23,13 @@ How to extract spectrum from different regions.
 
 # Introduction
 
-The RGS is best suited for high spectral resolution (from 100 to 500, FWHM)[<sup>1</sup>](#refer-anchor).
+The RGS is best suited for high spectral resolution (from 100 to 500, FWHM) X-ray spectroscopy in the energy range 0.33-2.5 keV or 5-38 $\AA$[<sup>1</sup>](#refer-anchor). 
+
+# Instrument description
+
+There are two identical RGSs behind two of the three mirror assemblies [<sup>2</sup>](#refer-anchor). Fig .1 shows the optical design of the RGS.
+
+<img src="/Users/young/Documents/GitHub/LittleCaps.github.io/screenshots/RGS_opdes.png" alt="RGS_opdes" style="zoom:50%;" />
 
 # Position Angle
 
@@ -34,3 +40,4 @@ The Definition of **position angle** of RGS is "the astronomical position angle 
 <div id="refer-anchor"></div>
 
 [1] XMM-Newton Users Handbook
+[2] den Herder, J. W., Brinkman, A. C., Kahn, S. M., et al. 2001, A&A, 365, L7
