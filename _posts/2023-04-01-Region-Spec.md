@@ -29,11 +29,19 @@ The RGS is best suited for high spectral resolution (from 100 to 500, FWHM) X-ra
 
 There are two identical RGSs behind two of the three mirror assemblies [<sup>2</sup>](#refer-anchor). Fig .1 shows the optical design of the RGS.
 
-<img src="/Users/young/Documents/GitHub/LittleCaps.github.io/screenshots/RGS_opdes.png" alt="RGS_opdes" style="zoom:50%;" />
+<img src="/Users/young/Documents/GitHub/LittleCaps.github.io/screenshots/RGS_opdes.png" alt="RGS_opdes" style="zoom:60%;" />
+
+<center>Fig.1. The Optical design of RGS
+
+## RFC chip arrays
+
+
 
 # Position Angle
 
 The Definition of **position angle** of RGS is "the astronomical position angle gives the angular distance of the RGS dispersion axis measured from the celestial North towards East".
+
+
 
 # Reference
 
