@@ -21,8 +21,16 @@ How to extract spectrum from different regions.
 
 <!--more-->
 
-# 
+# Introduction
+
+The RGS is best suited for high spectral resolution (from 100 to 500, FWHM)[<sup>1</sup>](#refer-anchor).
 
 # Position Angle
 
 The Definition of **position angle** of RGS is "the astronomical position angle gives the angular distance of the RGS dispersion axis measured from the celestial North towards East".
+
+# Reference
+
+<div id="refer-anchor"></div>
+
+[1] XMM-Newton Users Handbook
