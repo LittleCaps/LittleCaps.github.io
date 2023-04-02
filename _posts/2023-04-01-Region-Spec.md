@@ -1,6 +1,6 @@
 ---
 layout: article
-title: RGS Data processing
+title: RGS Brief introduction
 tags: Astronomy
 tags: X-ray
 aside:
@@ -21,8 +21,8 @@ How to extract spectrum from different regions.
 
 <!--more-->
 
-# Flow Diagram
+# 
 
 # Position Angle
 
-The Definition of position angle of RGS is "the astronomical position angle gives the angular distance of the RGS dispersion axis measured from the celestial North towards East".
+The Definition of **position angle** of RGS is "the astronomical position angle gives the angular distance of the RGS dispersion axis measured from the celestial North towards East".
