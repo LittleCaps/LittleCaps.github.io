@@ -1,37 +1,52 @@
-
-<footer class="footer py-4 js-page-footer">
-  <div class="main">
-
-    {%- assign _site_author = site.author -%}
-    {%- if _site_author.type == 'organization' -%}
-      {%- assign _site_author_itemtype = 'http://schema.org/Organization' -%}
-    {%- else -%}
-      {%- assign _site_author_itemtype = 'http://schema.org/Person' -%}
-    {%- endif -%}
-
-    <div itemscope itemtype="{{ _site_author_itemtype }}">
-      <meta itemprop="name" content="{{ _site_author.name }}">
-      {%- assign _site_author_url = _site_author.url | default: '/'-%}
-      {%- include snippets/get-nav-url.html path=_site_author_url -%}
-      {%- assign _site_author_url = __return -%}
-      <meta itemprop="url" content="{{ _site_author_url }}">
-      {%- if _site_author.bio -%}
-        <meta itemprop="description" content="{{ _site_author.bio }}">
-      {%- endif -%}
-      <div class="footer__author-links">
-        {%- include author-links.html author=_site_author -%}
+<footer class="blog-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        {%- assign _paths_root = site.paths.root | default: '/' -%}
+        {%- include snippets/get-nav-url.html path=_paths_root -%}
+        <a href="{{ __return }}" class="nav-logo">
+          <span class="logo-icon">H</span>
+          {{ site.title | default: "Huiyang's Lab" }}
+        </a>
+        <p>A personal research blog sharing insights, experiments, and discoveries from the frontiers of astronomy and X-ray data analysis.</p>
+        <div class="social-links">
+          {%- assign _site_author = site.author -%}
+          {%- if _site_author.github -%}
+            <a href="https://github.com/{{ _site_author.github }}" class="social-link" aria-label="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if _site_author.email -%}
+            <a href="mailto:{{ _site_author.email }}" class="social-link" aria-label="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if _site_author.twitter -%}
+            <a href="https://twitter.com/{{ _site_author.twitter }}" class="social-link" aria-label="Twitter">&#x1D54F;</a>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Research</h4>
+        <a href="/archive.html">Archive</a>
+        <a href="/astronomy.html">Astronomy</a>
+        <a href="/about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="https://www.cosmos.esa.int/web/xmm-newton/what-is-sas">XMM SAS</a>
+        <a href="https://heasarc.gsfc.nasa.gov/docs/xmm/abc/">ABC Guide</a>
+        <a href="https://www.cosmos.esa.int/web/xmm-newton/sas-threads">SAS Threads</a>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="https://github.com/LittleCaps">GitHub</a>
+        <a href="/feed.xml">RSS Feed</a>
       </div>
     </div>
-    {%- include snippets/get-locale-string.html key='COPYRIGHT_DATES' -%}
-    {%- assign _locale_copyright_dates = __return -%}
-    <div class="site-info mt-2">
-      <div>
-        {%- include snippets/get-locale-string.html key='COPYRIGHT_DATES' -%}
-        {%- assign _locale_copyright_dates = __return -%}
-        © {{ site.title }} {{ _locale_copyright_dates }},
-        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
-        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
-      </div>
+    <div class="footer-bottom">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ site.title | default: "Huiyang's Lab" }}. All rights reserved.</span>
+      <span>Built with Jekyll &amp; curiosity.</span>
     </div>
   </div>
 </footer>

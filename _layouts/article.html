@@ -3,27 +3,42 @@ layout: page
 type: article
 ---
 
-{%- include snippets/assign.html
-  target = site.data.variables.default.page.sharing
-  source0=layout.sharing source1=page.sharing -%}
-{%- assign _sharing = __return -%}
+<div class="article-detail-wrapper">
+  <a href="/" class="article-detail-back">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back to Home
+  </a>
 
-<div class="layout--article">
-  {%- include article/top/custom.html -%}
-
-  <div class="article__content" itemprop="articleBody">{{ content }}</div>
-
-  {%- if _sharing -%}
-    <section class="article__sharing d-print-none">{%- include sharing.html -%}</section>
-  {%- endif -%}
-
-  <div class="d-print-none">
-    {%- include article-footer.html -%}
-    {%- include article-section-navigator.html -%}
+  <div class="article-detail-header">
+    {%- if page.tags.size > 0 -%}
+      <span class="article-category">{{ page.tags | first }}</span>
+    {%- endif -%}
+    <h1>{{ page.title }}</h1>
+    <div class="article-meta">
+      <span class="article-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+      <span>&middot;</span>
+      <span>{% assign words = content | number_of_words %}{% assign mins = words | divided_by: 200 %}{% if mins < 1 %}1{% else %}{{ mins }}{% endif %} min read</span>
+    </div>
   </div>
 
+  <div class="article-detail-body">
+    {{ content }}
+  </div>
 </div>
 
 <script>
-  {%- include scripts/article.js -%}
+  // Scroll animations for article page
+  (function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(function(el) {
+      observer.observe(el);
+    });
+  })();
 </script>
