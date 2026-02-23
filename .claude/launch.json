@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jekyll",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "eval \"$(rbenv init -)\" && bundle exec jekyll serve --host 0.0.0.0 --port 4001"],
+      "port": 4001
+    }
+  ]
+}
