@@ -4,7 +4,7 @@
     {
       "name": "jekyll",
       "runtimeExecutable": "bash",
-      "runtimeArgs": ["-c", "eval \"$(rbenv init -)\" && bundle exec jekyll serve --host 0.0.0.0 --port 4001"],
+      "runtimeArgs": ["-c", "eval \"$(rbenv init -)\" && RBENV_VERSION=3.2.2 bundle exec jekyll serve --host 0.0.0.0 --port 4001 --future"],
       "port": 4001
     }
   ]

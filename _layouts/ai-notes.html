@@ -1,0 +1,37 @@
+---
+layout: page
+titles:
+  # @start locale config
+  en      : &EN       AI Notes
+  en-GB   : *EN
+  en-US   : *EN
+  en-CA   : *EN
+  en-AU   : *EN
+  zh-Hans : &ZH_HANS  AI 心得
+  zh      : *ZH_HANS
+  zh-CN   : *ZH_HANS
+  zh-SG   : *ZH_HANS
+  zh-Hant : &ZH_HANT  AI 心得
+  zh-TW   : *ZH_HANT
+  zh-HK   : *ZH_HANT
+  ko      : &KO       AI 노트
+  ko-KR   : *KO
+  fr      : &FR       Notes AI
+  fr-BE   : *FR
+  fr-CA   : *FR
+  fr-CH   : *FR
+  fr-FR   : *FR
+  fr-LU   : *FR
+  tr      : &TR       AI Notları
+  # @end locale config
+---
+
+{% assign ai_posts = site.posts | where_exp: "post", "post.tags contains 'AI'" %}
+
+<div class="layout--archive">
+  <div class="layout--archive__result">
+    {%- include article-list.html articles=ai_posts type='brief' show_info=true reverse=true group_by='year' -%}
+  </div>
+</div>
+
+{{ content }}
