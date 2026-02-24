@@ -181,3 +181,32 @@ Human reviewers only validate:
 5. Score, rework if needed
 6. Produce delivery package and perform final human sign-off
 
+---
+
+## Case Study: Blog Redesign with Multi-Agent Collaboration
+
+I put the workflow above into practice by redesigning this very blog. The goal was to transform the site from a light-orange theme into the dark "AstroTech" style you see now — and to do it almost entirely through AI collaboration.
+
+### Internal: Claude Agent Team
+
+Inside **Claude Code**, I used the built-in agent team functionality to parallelize the work:
+
+- **Explore agent** scanned the entire Jekyll codebase — layouts, SCSS, config, posts — and produced a structured report of the existing architecture.
+- **Plan agent** designed the implementation strategy: which files to change, what CSS variables to introduce, how to restructure the homepage layout.
+- The **main agent** executed the plan, rewriting 8 files across the stack: `_config.yml`, `custom.scss` (~950 lines), `home.html`, `header.html`, `footer.html`, and more.
+
+The whole process was iterative — the agent built, previewed, identified layout issues (e.g. the TeXt theme's `.root` element constraining the page height to viewport), and fixed them in successive cycles without manual intervention.
+
+### External: ChatGPT + Gemini
+
+Beyond Claude, I coordinated with external models for specific strengths:
+
+- **ChatGPT (Codex)** handled the initial requirement analysis and helped draft the `PRD.md`-style specification for the redesign — defining the target color palette, layout structure, and component inventory.
+- **Gemini** was used for long-context synthesis — feeding it the full reference screenshot alongside the existing codebase summary to identify design gaps and suggest the CSS variable mapping from the old light theme to the new dark theme.
+
+The cross-model validation caught several issues: Gemini flagged that the `:has()` CSS selector used for layout overrides has limited browser support, prompting a fallback strategy; ChatGPT suggested the `html, body { height: auto !important }` fix for the TeXt theme's viewport-locked layout.
+
+### Key Takeaway
+
+This case study demonstrates that the AI-first workflow isn't theoretical — it works for real projects. The entire blog redesign, from exploration to implementation to debugging, was executed by AI agents with human oversight limited to design approval and final review. The multi-model approach leverages each system's strengths: Claude for deep code execution, ChatGPT for specification and implementation, Gemini for long-context analysis and cross-validation.
+
