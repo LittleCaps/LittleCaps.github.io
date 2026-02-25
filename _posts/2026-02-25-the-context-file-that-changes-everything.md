@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "The Context File That Changes Everything: Building a Master Background Document for AI Collaboration"
-date: 2025-02-25 22:00:00 +0800
+date: 2026-02-25 22:00:00 +0800
 tags: AI
 mode: immersive
 header:
