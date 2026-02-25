@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "The Context File That Changes Everything: Building a Master Background Document for AI Collaboration"
+title: AI Notes - Day 2
 date: 2026-02-25 22:00:00 +0800
 tags: AI
 mode: immersive
@@ -12,7 +12,7 @@ article_header:
   background_color: '#203028'
   background_image:
     gradient: 'linear-gradient(135deg, rgba(34, 100, 195, .4), rgba(139, 34, 139, .4))'
-    src: /assets/images/covers/cover-nightsky.jpg
+    src: /assets/images/covers/cover-sunset-hills.jpg
 ---
 
 Today I stumbled onto two things I hadn't properly explored before — LSP (Language Server Protocol) integration with AI tooling, and Claude's system-level customization features. I plan to dig into both tomorrow. But the real insight of the day was something simpler and, I suspect, more universally useful: **creating a master background markdown file that serves as persistent context for every AI interaction in a project**.
