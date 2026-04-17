@@ -2,7 +2,9 @@
 layout: page
 ---
 
-{% assign astronomy_posts = site.posts | where_exp: "post", "post.tags contains 'Astronomy' or post.tags contains 'X-ray'" %}
+{% assign astronomy_posts = site.posts | where_exp: "post", "post.tags contains 'Astronomy'" %}
+{% assign xray_posts = site.posts | where_exp: "post", "post.tags contains 'X-ray'" %}
+{% assign astronomy_posts = astronomy_posts | concat: xray_posts | sort: "date" | reverse %}
 {% assign ai_posts = site.posts | where_exp: "post", "post.tags contains 'AI'" %}
 {% assign featured = site.posts | first %}
 {% assign research_latest = astronomy_posts | first %}

@@ -26,7 +26,9 @@ titles:
   # @end locale config
 ---
 
-{% assign astronomy_posts = site.posts | where_exp: "post", "post.tags contains 'Astronomy' or post.tags contains 'X-ray'" %}
+{% assign astronomy_posts = site.posts | where_exp: "post", "post.tags contains 'Astronomy'" %}
+{% assign xray_posts = site.posts | where_exp: "post", "post.tags contains 'X-ray'" %}
+{% assign astronomy_posts = astronomy_posts | concat: xray_posts | sort: "date" | reverse %}
 
 <div class="layout--archive">
   <div class="layout--archive__result">
