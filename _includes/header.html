@@ -14,7 +14,9 @@
         {%- for _item in site.data.navigation.header -%}
           {%- include snippets/get-nav-url.html path=_item.url -%}
           {%- assign _nav_url = __return -%}
-          <a href="{{ _nav_url }}"{% if _item.title == 'Tutorials' %} class="active"{% endif %}>{%- if _item.title -%}{{ _item.title }}{%- else -%}{%- include snippets/get-string-from-locale-config.html locale=_item.titles -%}{{ __return }}{%- endif -%}</a>
+          {%- assign _current_url = page.url | replace: '/index.html', '/' -%}
+          {%- assign _active_url = _item.url | replace: '/index.html', '/' -%}
+          <a href="{{ _nav_url }}"{% if _current_url == _active_url %} class="active"{% endif %}>{%- if _item.title -%}{{ _item.title }}{%- else -%}{%- include snippets/get-string-from-locale-config.html locale=_item.titles -%}{{ __return }}{%- endif -%}</a>
         {%- endfor -%}
       {%- endif -%}
     </div>
@@ -22,10 +24,10 @@
     <div class="nav-right">
       <div class="nav-search">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input type="text" placeholder="Search cosmos..." readonly onclick="window.searchModal && window.searchModal.show()">
+        <input type="text" placeholder="Search posts..." readonly onclick="window.searchModal && window.searchModal.show()">
       </div>
-      <a href="#newsletter" class="nav-cta">
-        Subscribe
+      <a href="{% if site.author.email %}mailto:{{ site.author.email }}{% else %}/about.html{% endif %}" class="nav-cta">
+        Contact
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </a>
     </div>
