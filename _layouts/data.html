@@ -2,35 +2,35 @@
 layout: page
 titles:
   # @start locale config
-  en      : &EN       AI Notes
+  en      : &EN       Data & Models
   en-GB   : *EN
   en-US   : *EN
   en-CA   : *EN
   en-AU   : *EN
-  zh-Hans : &ZH_HANS  AI 心得
+  zh-Hans : &ZH_HANS  数据与模型
   zh      : *ZH_HANS
   zh-CN   : *ZH_HANS
   zh-SG   : *ZH_HANS
-  zh-Hant : &ZH_HANT  AI 心得
+  zh-Hant : &ZH_HANT  數據與模型
   zh-TW   : *ZH_HANT
   zh-HK   : *ZH_HANT
-  ko      : &KO       AI 노트
+  ko      : &KO       데이터 & 모델
   ko-KR   : *KO
-  fr      : &FR       Notes AI
+  fr      : &FR       Données & Modèles
   fr-BE   : *FR
   fr-CA   : *FR
   fr-CH   : *FR
   fr-FR   : *FR
   fr-LU   : *FR
-  tr      : &TR       AI Notları
+  tr      : &TR       Veri & Modeller
   # @end locale config
 ---
 
-{% assign ai_posts = site.posts | where_exp: "post", "post.tags contains 'AI'" %}
+{% assign data_posts = site.posts | where_exp: "post", "post.tags contains 'Data'" %}
 
 <div class="layout--archive">
   <div class="layout--archive__result">
-    {%- include article-list.html articles=ai_posts type='brief' show_info=true reverse=true group_by='year' -%}
+    {%- include article-list.html articles=data_posts type='brief' show_info=true reverse=true group_by='year' -%}
   </div>
 </div>
 

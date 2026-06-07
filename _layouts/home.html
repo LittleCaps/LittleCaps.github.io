@@ -2,13 +2,11 @@
 layout: page
 ---
 
-{% assign astronomy_posts = site.posts | where_exp: "post", "post.tags contains 'Astronomy'" %}
-{% assign xray_posts = site.posts | where_exp: "post", "post.tags contains 'X-ray'" %}
-{% assign astronomy_posts = astronomy_posts | concat: xray_posts | sort: "date" | reverse %}
-{% assign ai_posts = site.posts | where_exp: "post", "post.tags contains 'AI'" %}
+{% assign analysis_posts = site.posts | where_exp: "post", "post.tags contains 'Analysis'" | sort: "date" | reverse %}
+{% assign data_posts = site.posts | where_exp: "post", "post.tags contains 'Data'" | sort: "date" | reverse %}
 {% assign featured = site.posts | first %}
-{% assign research_latest = astronomy_posts | first %}
-{% assign ai_latest = ai_posts | first %}
+{% assign analysis_latest = analysis_posts | first %}
+{% assign data_latest = data_posts | first %}
 
 <div class="blog-home">
   <div class="home-layout">
@@ -18,7 +16,7 @@ layout: page
           <img class="author-avatar" src="{{ site.author.avatar }}" alt="{{ site.author.name }}">
         </div>
         <h3 class="author-name">{{ site.author.name }}</h3>
-        <span class="author-title">Astrophysicist · Purple Mountain Observatory</span>
+        <span class="author-title">Football Data Analyst</span>
         <p class="author-bio">{{ site.author.bio }}</p>
         <div class="author-buttons">
           {%- if site.author.github -%}
@@ -40,15 +38,15 @@ layout: page
         <h4 class="sidebar-heading">Browse</h4>
         <ul class="browse-list">
           <li>
-            <a href="/astronomy.html">
-              <span class="browse-label">Astronomy</span>
-              <span class="browse-count">{{ astronomy_posts | size }}</span>
+            <a href="/analysis.html">
+              <span class="browse-label">Analysis</span>
+              <span class="browse-count">{{ analysis_posts | size }}</span>
             </a>
           </li>
           <li>
-            <a href="/ai-notes.html">
-              <span class="browse-label">AI Notes</span>
-              <span class="browse-count">{{ ai_posts | size }}</span>
+            <a href="/data.html">
+              <span class="browse-label">Data &amp; Models</span>
+              <span class="browse-count">{{ data_posts | size }}</span>
             </a>
           </li>
           <li>
@@ -67,7 +65,7 @@ layout: page
       </div>
 
       <div class="sidebar-card recent-card fade-up">
-        <h4 class="sidebar-heading">Recent Notes</h4>
+        <h4 class="sidebar-heading">Recent Posts</h4>
         <ul class="recent-list">
           {%- for post in site.posts limit:4 -%}
           <li>
@@ -85,43 +83,43 @@ layout: page
       <section class="hero-banner fade-up">
         <span class="hero-badge">
           <span class="badge-dot"></span>
-          Purple Mountain Observatory
+          Football Analytics
         </span>
-        <h1 class="hero-title">Research notes for <span class="highlight">quasars, spectra, and AI workflows</span></h1>
+        <h1 class="hero-title">Reading the game through <span class="highlight">data, models, and metrics</span></h1>
         <p class="hero-desc">{{ site.author.bio }}</p>
         <div class="hero-actions">
-          <a href="/astronomy.html" class="hero-link hero-link--primary">Explore Astronomy</a>
-          <a href="/ai-notes.html" class="hero-link">Read AI Notes</a>
+          <a href="/analysis.html" class="hero-link hero-link--primary">Match Analysis</a>
+          <a href="/data.html" class="hero-link">Data &amp; Models</a>
         </div>
       </section>
 
       <section class="home-intro fade-up">
         <p class="section-kicker">About This Site</p>
-        <h2 class="section-title">A working notebook for astronomy and applied AI</h2>
-        <p class="home-intro-copy">Little Cap is where research workflow notes sit next to engineering workflow notes. The astronomy stream tracks data reduction, instrument references, and technical context for high-redshift quasar studies. The AI stream documents how language models fit into real day-to-day work, from coding to writing to coordination.</p>
+        <h2 class="section-title">A working notebook for football data analysis</h2>
+        <p class="home-intro-copy">Touchline is where match analysis sits next to the models behind it. The analysis stream breaks down games, tactics, and player performance with event and tracking data. The data stream documents the methods — expected-goals models, scouting metrics, pipelines, and visualizations — used to get there.</p>
       </section>
 
       <section class="series-grid">
-        <a href="/astronomy.html" class="series-card series-card--astronomy fade-up">
-          <span class="series-label">Astronomy</span>
-          <h2>Research notes and data-processing references</h2>
-          <p>Posts on quasar absorption systems, Lyalpha forest context, X-ray spectroscopy, and practical reduction workflows.</p>
+        <a href="/analysis.html" class="series-card series-card--analysis fade-up">
+          <span class="series-label">Analysis</span>
+          <h2>Match, tactical, and player breakdowns</h2>
+          <p>Game reviews and tactical notes built on event and tracking data — pressing, build-up, set pieces, and chance quality.</p>
           <div class="series-meta">
-            <span>{{ astronomy_posts | size }} posts</span>
-            {%- if research_latest -%}
-            <span>Latest: {{ research_latest.title }}</span>
+            <span>{{ analysis_posts | size }} posts</span>
+            {%- if analysis_latest -%}
+            <span>Latest: {{ analysis_latest.title }}</span>
             {%- endif -%}
           </div>
         </a>
 
-        <a href="/ai-notes.html" class="series-card series-card--ai fade-up">
-          <span class="series-label">AI Notes</span>
-          <h2>Operational notes on using AI as infrastructure</h2>
-          <p>Short records on multi-agent workflows, context management, verification habits, and practical tooling experiments.</p>
+        <a href="/data.html" class="series-card series-card--data fade-up">
+          <span class="series-label">Data &amp; Models</span>
+          <h2>The models and metrics behind the analysis</h2>
+          <p>Expected-goals models, scouting metrics, data pipelines, and visualization experiments — how the numbers get made.</p>
           <div class="series-meta">
-            <span>{{ ai_posts | size }} posts</span>
-            {%- if ai_latest -%}
-            <span>Latest: {{ ai_latest.title }}</span>
+            <span>{{ data_posts | size }} posts</span>
+            {%- if data_latest -%}
+            <span>Latest: {{ data_latest.title }}</span>
             {%- endif -%}
           </div>
         </a>
@@ -135,7 +133,7 @@ layout: page
           {%- elsif featured.article_header.background_image.src -%}
           <img src="{{ featured.article_header.background_image.src }}" alt="{{ featured.title }}">
           {%- else -%}
-          <img src="/assets/images/covers/cover-nightsky.jpg" alt="{{ featured.title }}">
+          <img src="/assets/images/covers/cover-forest.jpg" alt="{{ featured.title }}">
           {%- endif -%}
         </div>
         <div class="featured-content">
@@ -187,7 +185,7 @@ layout: page
               {%- elsif post.article_header.background_image.src -%}
               <img src="{{ post.article_header.background_image.src }}" alt="{{ post.title }}">
               {%- else -%}
-              <img src="/assets/images/covers/cover-nightsky.jpg" alt="{{ post.title }}">
+              <img src="/assets/images/covers/cover-forest.jpg" alt="{{ post.title }}">
               {%- endif -%}
             </div>
             <div class="card-body">

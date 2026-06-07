@@ -5,38 +5,36 @@ key: page-about
 show_title: true
 ---
 
-Huiyang Mao is an astrophysicist at Purple Mountain Observatory, working on the
-intergalactic medium through high-redshift quasar absorption lines and the
-Lyalpha forest at z~3-4. This site is a working notebook for research,
-instrument workflows, and the parts of technical life that sit between data
-analysis and writing.
+Huiyang Mao is a football data analyst. This site is a working notebook for
+match analysis, the models behind it, and the parts of the work that sit between
+raw event data and a usable conclusion.
 
-## Research Focus
+## What I Work On
 
 My current interests center on:
 
-- quasar absorption systems and the large-scale structure they trace
-- Lyalpha forest statistics at high redshift
-- X-ray spectroscopy workflows, especially for XMM-Newton RGS data
-- practical data reduction pipelines in Python and scientific Linux
+- expected-goals (xG) and shot-quality models
+- tactical and match analysis built on event and tracking data
+- scouting and player-recruitment metrics
+- data pipelines and visualization for football data
 
 ## Tools I Use
 
-Most posts grow out of day-to-day work with Python, Astropy, NumPy, shell
-tooling, and astronomy-specific reduction software. I care about methods that
-are reproducible, inspectable, and useful to revisit months later.
+Most posts grow out of day-to-day work with Python, pandas, NumPy, scikit-learn,
+and plotting libraries like matplotlib and mplsoccer. I care about methods that
+are reproducible, inspectable, and useful to revisit months later. Public data
+from sources like StatsBomb, FBref, and Understat shows up often.
 
-## What This Blog Covers
+## What This Site Covers
 
 The site is organized around two streams:
 
-- **Astronomy** for research notes, instrument references, and data-processing
-  workflows
-- **AI Notes** for experiments in using language models as engineering tools,
-  writing partners, and workflow infrastructure
+- **Analysis** for match, tactical, and player breakdowns
+- **Data & Models** for the xG models, metrics, pipelines, and visualizations
+  behind the analysis
 
-The goal is not to publish polished announcements. It is to keep a precise
-record of things that were worth understanding once and will probably be worth
+The goal is not polished punditry. It is to keep a precise record of methods and
+findings that were worth understanding once and will probably be worth
 understanding again.
 
 ## Contact

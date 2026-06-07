@@ -20,10 +20,10 @@ text_skin: dark # "default" (default), "dark", "forest", "ocean", "chocolate", "
 highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : https://littlecaps.github.io
 baseurl :
-title   : Little Cap
+title   : Touchline
 description: >
-  Research notes on high-redshift quasars, Lyalpha forest studies, X-ray data
-  reduction, and practical AI workflows.
+  Football data analysis — expected goals models, match and tactical analysis,
+  scouting metrics, and data visualization.
 
 
 ## => Language and Timezone
@@ -39,7 +39,7 @@ author:
   name      : Huiyang Mao
   url       : https://littlecaps.github.io/about.html
   avatar    : /assets/images/avatar-tennis.png
-  bio       : Astrophysicist at Purple Mountain Observatory. I study high-redshift quasar absorption lines and the Lyalpha forest at z~3-4 to probe cosmic structure.
+  bio       : Football data analyst. I build expected-goals models, dig into match and tracking data, and turn raw event data into tactical and scouting insight.
   email     : hymao@pmo.ac.cn
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
   twitter   : # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name

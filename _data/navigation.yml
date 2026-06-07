@@ -2,11 +2,11 @@ header:
   - title: Home
     url: /
 
-  - title: Astronomy
-    url: /astronomy.html
+  - title: Analysis
+    url: /analysis.html
 
-  - title: AI Notes
-    url: /ai-notes.html
+  - title: Data & Models
+    url: /data.html
 
   - title: Archive
     url: /archive.html
