@@ -39,5 +39,5 @@ understanding again.
 
 ## Contact
 
-- Email: [hymao@pmo.ac.cn](mailto:hymao@pmo.ac.cn)
+- Email: [littlecapmao@gmail.com](mailto:littlecapmao@gmail.com)
 - GitHub: [LittleCaps](https://github.com/LittleCaps)
