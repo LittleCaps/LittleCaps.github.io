@@ -169,6 +169,11 @@ search:
 
 ## => Analytics
 ##############################
+## GoatCounter (privacy-friendly visitor stats)
+## Set to your goatcounter site code (the CODE in https://CODE.goatcounter.com)
+## to enable tracking; leave empty to disable.
+goatcounter_code:
+
 analytics:
   provider: false # false (default), "google", "custom"
 
