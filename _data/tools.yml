@@ -47,3 +47,6 @@
     try it straight away. For real numbers, load your own file: a database,
     CSVs, a zip, JSON or Parquet, all parsed inside your own browser and never
     sent anywhere.
+  links:
+    - text: Source
+      url: https://github.com/LittleCaps/scout-app
