@@ -776,6 +776,138 @@ html, body {
 }
 .layout--404 .sign p { color: var(--text-secondary); }
 
+/* ========== TOOLS ========== */
+.om-tools {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+.om-tools-intro {
+  max-width: 62ch;
+  margin-bottom: 3.5rem;
+}
+.om-tools-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0.9rem 0 1.1rem;
+}
+.om-tools-lede {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+}
+.om-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.om-tool {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 2rem 2rem 2.2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+.om-tool:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.om-tool-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+.om-tool-index {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+.om-tool:hover .om-tool-index { color: var(--accent-text); }
+
+/* What the visitor has to bring. Reads as a spec line, not a warning. */
+.om-tool-needs {
+  @extend %micro-label;
+  color: var(--accent-text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.75rem;
+  white-space: nowrap;
+}
+.om-tool-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin: 0;
+}
+.om-tool-title a { color: inherit; transition: var(--transition); }
+.om-tool:hover .om-tool-title a { color: var(--accent-text); }
+.om-tool-tagline {
+  @extend %micro-label;
+  color: var(--text-secondary);
+  margin: -0.5rem 0 0;
+}
+.om-tool-description {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+}
+.om-tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.om-tool-tags li {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  background: rgba(20, 20, 20, 0.05);
+  border-radius: var(--radius-sm);
+  padding: 0.28rem 0.6rem;
+}
+.om-tool-note {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  border-left: 2px solid var(--accent);
+  padding-left: 0.9rem;
+  margin: 0;
+}
+.om-tool-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: auto;
+  padding-top: 0.7rem;
+}
+.om-tool-link {
+  @extend %micro-label;
+  color: var(--text-primary) !important;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+.om-tool-link:hover { border-bottom-color: var(--accent); }
+
 /* ========== SCROLL ANIMATIONS ========== */
 .fade-up {
   opacity: 0;
@@ -819,6 +951,9 @@ html, body {
   .om-hero-actions { justify-content: flex-start; }
   .om-band-caption { left: 1.25rem; right: 1.25rem; }
   .om-posts { padding: 3rem 1.25rem 4rem; }
+  .om-tools { padding: 3rem 1.25rem 4rem; }
+  .om-tool-grid { grid-template-columns: 1fr; }
+  .om-tool { padding: 1.75rem 1.5rem 2rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
   .article-detail-wrapper { padding: 0 1.25rem; }
@@ -828,6 +963,9 @@ html, body {
   .om-post-grid { grid-template-columns: 1fr; }
   .om-btn { width: 100%; }
   .om-hero-actions { width: 100%; flex-direction: column; }
+  .om-tool-actions { width: 100%; align-items: flex-start; flex-direction: column; gap: 1rem; }
+  /* The pill wraps under the index rather than squeezing the card. */
+  .om-tool-head { flex-wrap: wrap; gap: 0.6rem; }
 }
 
 /* end custom scss snippet */

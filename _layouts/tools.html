@@ -1,0 +1,101 @@
+---
+layout: page
+titles:
+  # @start locale config
+  en      : &EN       Tools
+  en-GB   : *EN
+  en-US   : *EN
+  en-CA   : *EN
+  en-AU   : *EN
+  zh-Hans : &ZH_HANS  工具
+  zh      : *ZH_HANS
+  zh-CN   : *ZH_HANS
+  zh-SG   : *ZH_HANS
+  zh-Hant : &ZH_HANT  工具
+  zh-TW   : *ZH_HANT
+  zh-HK   : *ZH_HANT
+  ko      : &KO       도구
+  ko-KR   : *KO
+  fr      : &FR       Outils
+  fr-BE   : *FR
+  fr-CA   : *FR
+  fr-CH   : *FR
+  fr-FR   : *FR
+  fr-LU   : *FR
+  tr      : &TR       Araçlar
+  # @end locale config
+---
+
+<div class="om-tools">
+
+  <section class="om-tools-intro fade-up">
+    <span class="om-kicker">Interactive</span>
+    <h1 class="om-tools-heading">Models you can push on</h1>
+    <p class="om-tools-lede">
+      Two of the models behind the writing are open to poke at directly. Both
+      run entirely in your browser &mdash; no account, no server doing the work,
+      nothing leaving your machine.
+    </p>
+  </section>
+
+  <section class="om-tool-grid">
+    {%- for tool in site.data.tools -%}
+    {%- assign idx = forloop.index -%}
+    {%- if idx < 10 -%}{%- assign idx_padded = idx | prepend: '0' -%}{%- else -%}{%- assign idx_padded = idx -%}{%- endif -%}
+    {%- comment -%}
+      tools.yml is plain prose, so everything out of it is escaped - "Transfer
+      P&L" is a name, not markup.
+    {%- endcomment -%}
+    <article class="om-tool fade-up">
+      <div class="om-tool-head">
+        <span class="om-tool-index">{{ idx_padded }}</span>
+        <span class="om-tool-needs">{{ tool.needs | escape }}</span>
+      </div>
+
+      <h2 class="om-tool-title">
+        <a href="{{ tool.url | escape }}">{{ tool.name | escape }}</a>
+      </h2>
+      <p class="om-tool-tagline">{{ tool.tagline | escape }}</p>
+      <p class="om-tool-description">{{ tool.description | strip_newlines | escape }}</p>
+
+      {%- if tool.tags -%}
+      <ul class="om-tool-tags">
+        {%- for tag in tool.tags -%}
+        <li>{{ tag | escape }}</li>
+        {%- endfor -%}
+      </ul>
+      {%- endif -%}
+
+      {%- if tool.note -%}
+      <p class="om-tool-note">{{ tool.note | strip_newlines | escape }}</p>
+      {%- endif -%}
+
+      <div class="om-tool-actions">
+        <a class="om-btn om-btn--solid" href="{{ tool.url | escape }}">Open {{ tool.name | escape }}</a>
+        {%- for link in tool.links -%}
+        <a class="om-tool-link" href="{{ link.url | escape }}">{{ link.text | escape }} &rarr;</a>
+        {%- endfor -%}
+      </div>
+    </article>
+    {%- endfor -%}
+  </section>
+
+</div>
+
+<script>
+  (function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.om-tools .fade-up').forEach(function(element) {
+      observer.observe(element);
+    });
+  })();
+</script>
+
+{{ content }}

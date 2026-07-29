@@ -205,6 +205,8 @@ exclude:
   - /node_modules
   - /screenshots
   - /test
+  # Note: do NOT add "/tools" here. Jekyll's exclude matches by prefix, so it
+  # would also drop tools.html - the page this site's Tools section lives on.
   - /vendor
 
 defaults:

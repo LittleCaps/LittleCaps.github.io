@@ -1,0 +1,49 @@
+# Interactive apps listed on /tools.html.
+#
+# Every one of these runs entirely in the reader's browser - no backend, no
+# upload, nothing to sign up for. `needs` says what the visitor has to bring:
+# an app that ships its own model is a different proposition from one that
+# analyses a file the reader supplies, and the card should say which.
+#
+# `url` is absolute when the app lives in its own repository and relative when
+# it is served out of this one.
+
+- name: Pass Advisor
+  tagline: Interactive pass decision simulator
+  url: https://littlecaps.github.io/pass-advisor/
+  description: >
+    Place attackers and defenders anywhere on the pitch and the expected value
+    of every available pass updates live. Three surfaces - pass success,
+    expected value, and the advantage of passing over holding - are drawn
+    straight from the model, so you can see why a decision is good rather than
+    just that it scored well.
+  needs: Runs as-is
+  tags:
+    - Expected value
+    - Pass model
+    - Formation presets
+  links:
+    - text: Write-up
+      url: /2026/07/20/pass-advisor-interactive-pass-decision-simulator.html
+    - text: Source
+      url: https://github.com/LittleCaps/pass-advisor
+
+- name: Transfer Scout
+  tagline: Transfer spend against what the player actually did
+  url: /scout/
+  description: >
+    Join a club's transfer ledger to its players' match records: fee against
+    minutes, goals, expected goals and distance covered, one row per spell at a
+    club. Filter by club, league and how the spell ended, bin any axis, and read
+    profit, return multiple and cost per goal off the same chart.
+  needs: Demo built in
+  tags:
+    - Transfer P&L
+    - Player performance
+    - Runs in-browser
+  note: >
+    The page is the analysis tool, not the data. It opens on a generated demo
+    dataset - invented clubs and fees, labelled as such throughout - so you can
+    try it straight away. For real numbers, load your own file: a database,
+    CSVs, a zip, JSON or Parquet, all parsed inside your own browser and never
+    sent anywhere.
